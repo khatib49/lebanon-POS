@@ -1,0 +1,10 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/LebanonPos.Api/LebanonPos.Api.csproj" />
+    <Project Path="src/LebanonPos.Domain/LebanonPos.Domain.csproj" />
+    <Project Path="src/LebanonPos.Infrastructure/LebanonPos.Infrastructure.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/LebanonPos.Tests/LebanonPos.Tests.csproj" />
+  </Folder>
+</Solution>

@@ -1,0 +1,6 @@
+@LebanonPos.Api_HostAddress = http://localhost:5174
+
+GET {{LebanonPos.Api_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
