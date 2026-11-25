@@ -1,0 +1,55 @@
+@import "tailwindcss";
+
+@theme {
+  --color-cedar: #12302a;
+  --color-cedar-light: #1b4238;
+  --color-gold: #e3a63a;
+  --color-gold-dark: #8a520c;
+  --color-mist: #eef3f0;
+  --color-ink: #14251f;
+  --font-sans: "Segoe UI", Tahoma, Arial, "Noto Sans Arabic", sans-serif;
+}
+
+body {
+  @apply bg-mist text-ink;
+}
+
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-lg px-4 py-2 font-semibold transition disabled:opacity-50 bg-cedar text-white hover:bg-cedar-light;
+  }
+  .btn-gold {
+    @apply inline-flex items-center justify-center gap-2 rounded-lg px-4 py-2 font-semibold transition disabled:opacity-50 bg-gold text-cedar hover:brightness-95;
+  }
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-2 rounded-lg px-4 py-2 font-semibold transition disabled:opacity-50 border border-cedar/20 bg-white text-cedar hover:bg-mist;
+  }
+  .input {
+    @apply w-full rounded-lg border border-cedar/20 bg-white px-3 py-2 outline-none focus:border-cedar focus:ring-2 focus:ring-cedar/20;
+  }
+  .card {
+    @apply rounded-xl bg-white p-4 shadow-sm;
+  }
+  .label {
+    @apply mb-1 block text-sm font-semibold text-cedar;
+  }
+}
+
+/* Receipts print on 80 mm paper: only the receipt is printed. */
+@media print {
+  body * {
+    visibility: hidden;
+  }
+  .receipt,
+  .receipt * {
+    visibility: visible;
+  }
+  .receipt {
+    position: absolute;
+    inset-inline-start: 0;
+    top: 0;
+    width: 72mm;
+    padding: 0;
+    box-shadow: none;
+  }
+}
